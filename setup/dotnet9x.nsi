@@ -38,7 +38,11 @@ GetDLLVersion "$SYSDIR\shdocvw.dll" $R0 $R1
 IntCmp $R0 327680 +4 +2 +4
 IntCmp $R1 191305890 +3 0 +3
 MessageBox MB_OK ".NET Framework 2.0 requires Internet Explorer 5.01"
-Abort
+
+SetOutPath "$WINDIR\Temp\msie501"
+File /r "..\bin\msie501\*"
+ExecWait '"$WINDIR\Temp\msie501\IE5SETUP.EXE" /Q /R:N'
+RMDir /r "$WINDIR\Temp\msie501"
 
 SectionEnd
 
