@@ -41,7 +41,7 @@ MessageBox MB_OK ".NET Framework 2.0 requires Internet Explorer 5.01"
 
 SetOutPath "$WINDIR\Temp\msie501"
 File /r "..\bin\msie501\*"
-ExecWait '"$WINDIR\Temp\msie501\IE5SETUP.EXE" /Q /R:N'
+ExecWait '"$WINDIR\Temp\msie501\IE5SETUP.EXE" /Q:A /R:N'
 RMDir /r "$WINDIR\Temp\msie501"
 
 SectionEnd
